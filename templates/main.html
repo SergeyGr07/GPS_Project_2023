@@ -1,11 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body class="bg-dark">
+		<main class="text-white">
+			<nav class="navbar navbar-expand navbar-light border border-white">
+				<h4 class="p-3 m-0">Tracker</h4>
+				<ul class="navbar-nav me-auto">
+					<li>
+						<a class="nav-link text-white">Home</a>
+					</li>
+					<li>
+						<a class="nav-link text-white-50">Map</a>
+					</li>
+				</ul>
+				<form class="d-flex form-inline my-2 my-lg-0">
+					<input
+						class="form-control mr-sm-2"
+						type="search"
+						placeholder="Search"
+						aria-label="Search"
+					/>
+					<button
+						class="btn btn-outline-success mx-2 my-2 my-sm-0"
+						type="submit"
+					>
+						Search
+					</button>
+				</form>
+			</nav>
+			<div class="container-fluid row mx-auto">
+				<section class="col-lg-auto p-2 mx-auto border border-white">
+					<h1 class="text-center">Map</h1>
+					<img
+						class="img-fluid"
+						src="https://belon.club/uploads/posts/2023-04/1681537378_belon-club-p-solnechnii-kotenok-vkontakte-3.jpg"
+					/>
+				</section>
+
+				<section class="col-lg p-2 mx-auto border border-white">
+					<div class="d-flex align-items-center">
+						<a class="col"></a>
+						<h1 class="col text-center">Info</h1>
+						<div class="col text-end">
+							<button
+								onclick="addData()"
+								class="col-auto btn btn-outline-secondary me-2"
+							>
+								➕
+							</button>
+							<button
+								onclick="removeAllData()"
+								class="col-auto btn btn-outline-danger"
+							>
+								🗑
+							</button>
+						</div>
+					</div>
+					<hr class="m-0" />
+					<table class="table table-dark table-hover table-striped">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Имя</th>
+								<th scope="col">Фамилия</th>
+								<th scope="col">Username</th>
+								<th scope="col">Удаление</th>
+							</tr>
+						</thead>
+						<tbody id="tablebody"></tbody>
+					</table>
+				</section>
+			</div>
+		</main>
+		<script src="../static/js/tableFill.js"></script>
+	</body>
 </html>
