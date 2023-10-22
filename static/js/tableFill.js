@@ -25,7 +25,7 @@ const addData = () => {
 		<td>${randomName()}</td>
 		<td>${randomSurname()}</td>
 		<td>${randomUsername()}</td>
-		<td class="text-center">
+		<td>
 			<button onClick="removeData(${userCounter})" class="btn btn-outline-danger">🗑</button>
 		</td>
 	`;
