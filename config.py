@@ -1,8 +1,9 @@
 from loguru._logger import Core as _Core
 from loguru._logger import Logger
 import os
+import sys
 
-LOG_PATH = "/log"
+LOG_PATH = "./log"
 
 
 def add_logger(logger_name: str, script_name: str):
@@ -15,11 +16,12 @@ def add_logger(logger_name: str, script_name: str):
         colors=False,
         raw=False,
         capture=True,
-        patcher=None,
+        patchers=[],
         extra={},
     )
 
     logger_name.add(f"{LOG_PATH}/{script_name}.log", level="DEBUG", rotation="9:00")
+    logger_name.add(sys.stdout, level="DEBUG")
     return logger_name
 
 

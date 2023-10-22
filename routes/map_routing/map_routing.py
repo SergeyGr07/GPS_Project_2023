@@ -4,7 +4,7 @@ from config import is_point_in_path
 import traceback
 import os
 import requests
-from logger_core import add_logger
+from config import add_logger
 
 script_name = os.path.splitext(os.path.basename(__file__))[0]
 logger = add_logger(f'logger_{script_name}', script_name)
@@ -128,6 +128,7 @@ def map():
         #     'm': m
         # }
         m_json = m.to_json()
+        logger.info("Map was created")
         return jsonify({'map': m_json})
 
     except KeyError as e:
