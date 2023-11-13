@@ -1,30 +1,22 @@
-# Script for reqeuest
 import serial
-# Configure the COM port
-port = "COM3"  # Replace with the appropriate COM port name
-baudrate = 9600
-
-try:
-    # Open the COM port
-    ser = serial.Serial(port, baudrate=baudrate)
-    print("Serial connection established.")
-
-    file = open("output.json", "w")
-    
-    # Read data from the Arduino
-    while True:
-        # Read a line of data from the serial port
-
-        line = ser.readline().decode().strip()
-
-        
-        print("Received:", line)
-
-        file.write( line + "\n" )
-        
 
 
+def main(port: str, rate: int) -> bool:
+    try: 
+        ser = serial.Serial(port, rate)
+        print("Serial connection established.")
 
-except KeyboardInterrupt:
-    file.close()
-    pass
+        file = open("output.json", "w")
+
+        while True:
+
+            line = ser.readline().decode().strip()
+
+            print("Received:", line)
+
+            file.write(line + "\n")
+            return True
+
+    except KeyboardInterrupt:
+        file.close()
+        return False
