@@ -9,18 +9,24 @@
 
 		<!-- Bootstrap CSS -->
 		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
 			crossorigin="anonymous" />
 
 		<!-- Leaflet CSS -->
-		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+		<link 
+			rel="stylesheet" 
+			href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+			integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+			crossorigin=""/>
+
 	</head>
 
-	<body class="bg-body-tertiary text-white" data-bs-theme="dark">
+
+	<body class="d-flex flex-column vh-100 bg-body-tertiary text-white" data-bs-theme="dark">
 		<!-- Navbar -->
-		<nav class="navbar navbar-expand bg-dark px-4 mb-2 rounded-bottom gap-2">
+		<nav class="navbar navbar-expand bg-dark px-4 rounded-bottom gap-2">
 			<h4 class="m-0">Tracker</h4>
 			<!-- Links -->
 			<ul class="navbar-nav d-sm-flex d-none">
@@ -38,17 +44,17 @@
 			</form>
 		</nav>
 		<!-- Main Content -->
-		<main class="d-flex flex-column flex-lg-row px-1 gap-2">
+		<main class="d-flex flex-column flex-lg-row h-100 align-items-start py-1 px-1 gap-2 overflow-auto">
+			
 			<!-- Map Section -->
-			<section class="bg-dark col p-2 rounded">
-				<h1 class="text-center">Map</h1>
-				<img class="img-fluid rounded" src="https://belon.club/uploads/posts/2023-04/1681537378_belon-club-p-solnechnii-kotenok-vkontakte-3.jpg" />
+			<section class="top-0 d-flex flex-column col h-100 w-100 bg-dark p-2 rounded">
+				<div id="map" class="rounded h-100">map</div>
 			</section>
 
 			<!-- Table Section -->
-			<section class="bg-dark col p-2 rounded">
+			<section class="d-flex flex-column col h-100 w-100 bg-dark p-2 rounded overflow-y-scroll">
 				<!-- Header Grid -->
-				<div class="row align-items-center">
+				<div class="d-flex align-items-center">
 					<a class="col-5"></a>
 					<h1 class="col-2 text-center">Info</h1>
 					<div class="col-5 text-end">
@@ -72,15 +78,25 @@
 					<tbody id="tablebody"></tbody>
 				</table>
 			</section>
+
 		</main>
-		<!-- Scripts -->
-		<script src="../static/js/tableFill.js"></script>
+
+
 		<!-- Leaflet JS -->
-		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+		<script 
+			src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+			integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+			crossorigin=""></script>
+
 		<!-- Bootstrap JS -->
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 			crossorigin="anonymous"></script>
+
+		<!-- Scripts -->
+		<script src="../static/js/tableFill.js"></script>
+		<script src="../static/js/map.js"></script>
+
 	</body>
 </html>
