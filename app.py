@@ -1,7 +1,9 @@
 from flask import Flask
 from routes import tracker
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 app.register_blueprint(tracker, url_prefix='/tracker/')
 
